@@ -1,0 +1,52 @@
+// Parent class
+class Animal {
+    // Method overriding
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Child class inheriting from Animal
+class Dog extends Animal {
+    // Method overriding
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+
+    // Method overloading
+    void makeSound(int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.println("Dog barks");
+        }
+    }
+}
+
+// Child class inheriting from Animal
+class Cat extends Animal {
+    // Method overriding
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+
+    // Method overloading
+    void makeSound(String sound) {
+        System.out.println("Cat " + sound);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        animal.makeSound(); // Output: Animal makes a sound
+
+        Dog dog = new Dog();
+        dog.makeSound(); // Output: Dog barks
+        dog.makeSound(3); // Output: Dog barks three times
+
+        Cat cat = new Cat();
+        cat.makeSound(); // Output: Cat meows
+        cat.makeSound("purrs"); // Output: Cat purrs
+    }
+}
